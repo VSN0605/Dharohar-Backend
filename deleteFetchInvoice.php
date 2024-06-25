@@ -13,26 +13,26 @@
        exit;
    }
 
-//    $conn = new mysqli("localhost","ruralhaa_royals","Royals#2023","ruralhaa_royals");
-        include("db-connection.php");
+    include("db-connection.php");
     
-    if (mysqli_connect_error()) {
-        echo json_encode(["error" => mysqli_connect_error()]);
+    if(mysqli_connect_error())
+    {
+        echo mysqli_connect_error();
         exit();
     }
-    
-    $data = json_decode(file_get_contents('php://input'), true);
-    
-    $id = $data['id'];
-    
-    $sql = "DELETE FROM invoice WHERE id='$id'";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo json_encode(["success" => "Invoice Entry deleted successfully"]);
-    } else {
-        echo json_encode(["error" => "Error deleting Invoice entry: " . $conn->error]);
+    else{
+        
+        $id = $_POST['id'];
+
+        $sql = "DELETE FROM `invoice` WHERE `id` = '$id'";
+        $res = mysqli_query($conn,$sql);
+        
+        if($res)
+        {
+            echo "Quotation deleted successfully!";
+        }
+        else{
+            echo "error!";
+        }
     }
-    
-    $conn->close();
-    ?>
-    
+?>  
