@@ -14,7 +14,7 @@
     else{
         
 
-        $sql = "select * from `artifacts` where id!='0' AND quantity !='0'";
+        $sql = "select * from `artifacts` where id!='0' AND quantity !='0' AND deleteTime IS NULL";
         $mysqli = mysqli_query($conn,$sql);
         $json_data = array();
     

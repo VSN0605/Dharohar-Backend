@@ -16,7 +16,7 @@
     else{
         
         $no = $_GET['id'];
-        $sql = "SELECT * FROM quotation WHERE quotation_no = '$no';";
+        $sql = "SELECT * FROM quotation WHERE quotation_no = '$no' AND DeleteTime IS NULL;";
         $mysqli = mysqli_query($conn,$sql);
         $json_data = array();
     

@@ -1,4 +1,5 @@
 <?php
+
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, POST');
     header("Access-Control-Allow-Headers: X-Request-With");
@@ -15,7 +16,7 @@
         
         $id = $_GET['id'];
 
-        $sql = "SELECT * from artifacts WHERE qrid='$id'";
+        $sql = "SELECT * from artifacts WHERE qrid='$id' AND deleteTime IS NULL";
         $mysqli = mysqli_query($conn,$sql);
         $json_data = array();
     
@@ -26,6 +27,5 @@
         echo json_encode(['phpresult'=>$json_data]);
     }
 
-    
 
 ?>  

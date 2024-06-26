@@ -13,7 +13,7 @@
     }
     else{
         
-        $sql = "select * from `invoice` where id!='0'";
+        $sql = "SELECT * FROM `invoice` WHERE id != '0' AND DeleteTime IS NULL";
         $mysqli = mysqli_query($conn,$sql);
         $json_data = array();
     

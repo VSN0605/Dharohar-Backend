@@ -10,7 +10,7 @@ if (mysqli_connect_error()) {
     echo json_encode(['error' => mysqli_connect_error()]);
     exit();
 } else {
-    $sql = "SELECT * FROM `quotation` WHERE id != '0'";
+    $sql = "SELECT * FROM `quotation` WHERE id != '0' AND DeleteTime IS NULL";
     $result = mysqli_query($conn, $sql);
     
     if (!$result) {

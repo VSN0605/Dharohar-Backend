@@ -1,4 +1,5 @@
 <?php
+
    header('Access-Control-Allow-Origin: *');
    header('Access-Control-Allow-Headers: X-Request-With');
    header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -13,7 +14,6 @@
        exit;
    }
 
-    // $conn = new mysqli("localhost","ruralhaa_royals","Royals#2023","ruralhaa_royals");
 
     include("db-connection.php");
     
@@ -37,4 +37,5 @@
             echo "error!";
         }
     }
+    
 ?>  

@@ -1,4 +1,5 @@
 <?php
+
    header("Access-Control-Allow-Origin", "*");
    header("Access-Control-Allow-Credentials", "true");
    header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
@@ -36,4 +37,5 @@
             echo 'No ID provided';
           }
     }
+
 ?>  

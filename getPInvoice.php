@@ -16,7 +16,7 @@
     else{
         
         $no = $_GET['id'];
-        $sql = "SELECT * FROM invoice WHERE invoice_no = '$no';";
+        $sql = "SELECT * FROM invoice WHERE invoice_no = '$no' AND DeleteTime IS NULL;";
         $mysqli = mysqli_query($conn,$sql);
         $json_data = array();
     
