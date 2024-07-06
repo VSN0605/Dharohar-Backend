@@ -55,14 +55,14 @@ if (mysqli_connect_error()) {
     exit();
 }
 
-$data = json_decode(file_get_contents('php://input'), true);
+// Reading the data sent by FormData
+$id = $_POST['id'];
 
-if (!isset($data['id'])) {
+if (!isset($id)) {
     echo json_encode(['error' => 'ID not provided']);
     exit();
 }
 
-$id = $data['id'];
 $dateTime = date('Y-m-d H:i:s');
 
 // Check if the record with the given ID exists
